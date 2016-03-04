@@ -7,11 +7,12 @@
   */
 
 // TODO: 
-//    1. Review the code until you understand how it works.
+//    1. Review the code
 //    2. Complete the two TODO items in the setup()
 //    3. Upload this file and run it!
-//    4. Use a BLE Browser to interact with the device. Write 3 bytes to characteristic 2D30C083-F39F-4CE6-923F-3484EA480596
-//    5. Add a single-byte off-command (and single byte turns the light off).
+//    4. Use a BLE Browser (like LightBlue) to interact with the device. 
+//       Write 3 bytes to characteristic 2D30C083-F39F-4CE6-923F-3484EA480596
+//    5. Add a single-byte off-command (sending a single byte turns the light off).
 //
 // CHALLENGE TODOs: 
 //    Also allow a 4 byte "fade" pattern. The first three bytes will be the color to 
@@ -19,7 +20,7 @@
 //    (Hints: You'll need to persistently keep track of colors.  
 //            The current use of local variables won't suffice. 
 //            The "millis()" function can be used to get the number of milliseconds
-//            since the Simblee was powered on.
+//            since the Simblee was powered on. See: https://www.arduino.cc/en/Reference/Millis
 
   
 // Define where each color LED is connected
@@ -36,7 +37,7 @@ void setup() {
 
   // TODO: Add your 3-4 letter Advertising String and end the quotes:
   //       (This will help you identify and work with your device)
-  SimbleeBLE.advertisementData = "rgb-      
+  SimbleeBLE.advertisementData = "rgb-
   SimbleeBLE.deviceName = "rgb-
 
   // Start the BLE stack
@@ -75,6 +76,3 @@ void SimbleeBLE_onReceive(char data[], int len) {
     analogWrite(led_blue, b);
   }
 }
-
-
-

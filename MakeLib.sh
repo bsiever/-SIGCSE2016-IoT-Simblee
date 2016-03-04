@@ -1,3 +1,5 @@
+#!/bin/sh
 rm -f ./SIGCSE.zip
-zip -r ../SIGCSE.zip ../SIGCSE -x ./SIGCSE/.git**\*                                                               
-mv ../SIGCSE.zip .
+cd ..
+zip -r SIGCSE.zip SIGCSE -x ./SIGCSE/.git**\* -x ./SIGCSE/Makelib.sh                                                               
+mv SIGCSE.zip ./SIGCSE
