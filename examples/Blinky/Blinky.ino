@@ -4,7 +4,7 @@
   */
 
 // TODO: 
-//    1. Review the code until you understand how it works.
+//    1. Review the code
 //    2. Upload this file and run it!
 //    3. Change the blink pattern --- leave green on for 2 seconds and off for 1.
 //    4. There is a Red led on pin 2.  Have it blink green for 2 seconds then red for 1 second.

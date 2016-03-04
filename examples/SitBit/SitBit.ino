@@ -4,19 +4,23 @@
  */
 
 // TODO:
-//    1. Review the code until you understand how it works.
+//    1. Review the code
 //    2. Complete the two TODO items in the setup()
 //    3. Upload this file and run it!
-//    4. Use te SimbleeForMobile app to interact with your fitness counter.
-//    5. Add a calorie counter that would translate a (correct) step count into calories
+//    4. Use te SimbleeForMobile app to see the readings from your fitness counter
+//    5. Steps are being overcounted.  Develop an algorithm that more 
+//       accurately counts steps
+//    6. Add a calorie counter that would translate a (correct) step count into calories
+//       (Review the sketch for details of how labels are added)
+//    7. Update the hardware:  Disconnect the USB cord, remove the Shields,
+//                             replace the USB shield with the battery shield, 
+//                             and try it out)
 //
 // CHALLENGE TODOs: 
 //    a. When disconnecting and reconnecting the number of steps isn't shown correctly.
 //       Update it so it works correctly.
-//    b. Polling the button isn't an effective way to detect a single change. 
-//       Develop new logic that is more robust.  (Use of millis() to count elapsed time
-//       may be helpful).
-
+//    b. Use an actual accelerometer (like: https://www.sparkfun.com/products/11446)
+//    c. Add a button to the app that will reset the step counter and calorie counter
 #include <SimbleeForMobile.h>
 
 // Use pin 6 for a switch (tile switch)
@@ -75,6 +79,4 @@ void ui() {
   
   SimbleeForMobile.endScreen();
 }
-
-
 
