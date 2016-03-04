@@ -10,7 +10,7 @@
 // Define the pin that represents the tilt switch
 const int tiltSwitch = 6;
 int stepCount = 0;
-int stepsLabel = 0;
+int stepsLabelId = 0;
 
 // Define constants for debounce
 const int min_on_time = 5;
@@ -40,7 +40,7 @@ void buttonPressed() {
   Serial.println("Press");
   stepCount++;
   if (SimbleeForMobile.updatable) {
-      SimbleeForMobile.updateValue(stepsLabel, stepCount);
+      SimbleeForMobile.updateValue(stepsLabelId, stepCount);
   }
 }
 
@@ -99,8 +99,6 @@ void updateSwitchState() {
 
 
 
-
-
 void loop() {  
   updateSwitchState();
   
@@ -112,12 +110,15 @@ void loop() {
 
 void ui()
 {
-  Serial.println("UI");  
   SimbleeForMobile.beginScreen(WHITE);
-  
-  SimbleeForMobile.drawText(60, 90, "Steps");
 
-  stepsLabel = SimbleeForMobile.drawText(60, 310, stepCount);
+  // Place a Logo on the screen
+  SimbleeForMobile.drawText(110, 180, "Steps", BLACK, 40);
+
+  // Place an updateable label on the screen
+  stepsLabelId = SimbleeForMobile.drawText(150, 220, stepCount, BLACK, 40);
+  
+  SimbleeForMobile.endScreen();
 
   SimbleeForMobile.endScreen();
 }
