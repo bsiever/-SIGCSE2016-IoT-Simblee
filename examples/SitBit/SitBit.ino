@@ -23,7 +23,7 @@
 //    c. Add a button to the app that will reset the step counter and calorie counter
 #include <SimbleeForMobile.h>
 
-// Use pin 6 for a switch (tile switch)
+// Use pin 6 for a switch (tilt switch)
 const int switchPin = 6;
 
 int stepCount = 0;
